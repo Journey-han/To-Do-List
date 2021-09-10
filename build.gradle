@@ -1,0 +1,35 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // restAPI 사용을 위한 라이브러리
+    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+    // JPA 사용을 위한 라이브러리
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // 인메모리 관계형 DB 사용. h2database. 의존성 추가
+    runtimeOnly 'com.h2database:h2'
+
+    // lombok 라이브리 의존성 추가.
+    // lombok은 의존성을 추가하고 바로 사용할 수 없다. 플러그인 설치,
+    annotationProcessor("org.projectlombok:lombok")
+    compileOnly("org.projectlombok:lombok")
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
