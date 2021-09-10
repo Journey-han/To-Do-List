@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-// 요청을 내리기 위한 클래스
+// 요청을 받기 위한 클래스
 public class TodoRequest {
 
     private String title;

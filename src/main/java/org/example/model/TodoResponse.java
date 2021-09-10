@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-// 응답을 받기 위한 클래스
+// 응답을 내려주기 위한 클래스
 public class TodoResponse {
     private Long id;
     private String title;
