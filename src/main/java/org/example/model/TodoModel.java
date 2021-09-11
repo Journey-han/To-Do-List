@@ -11,7 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 // 데이터와 데이터를 주고 받기 위한 클래스
-public class TodoEntity {
+public class TodoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
