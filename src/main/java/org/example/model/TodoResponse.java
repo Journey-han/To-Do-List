@@ -16,7 +16,7 @@ public class TodoResponse {
     private String url;
 
     // 생성자
-    private TodoResponse(TodoEntity todoEntity) {
+    public TodoResponse(TodoEntity todoEntity) {
         this.id = todoEntity.getId();
         this.title = todoEntity.getTitle();
         this.order = todoEntity.getOrder();
