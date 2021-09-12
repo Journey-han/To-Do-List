@@ -3,6 +3,7 @@ package org.example.services;
 import org.example.model.TodoModel;
 import org.example.model.TodoRequest;
 import org.example.services.repository.TodoRepository;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.AdditionalAnswers;
@@ -30,6 +31,7 @@ class TodoServiceTest {
 
     @Test
     void add() {
+
         when(this.todoRepository.save(any(TodoModel.class))).then(AdditionalAnswers.returnsFirstArg());
 
         TodoRequest expected = new TodoRequest();
@@ -44,10 +46,12 @@ class TodoServiceTest {
     @Test
     void searchById() {
         TodoModel entity = new TodoModel();
+
         entity.setId(789L);
         entity.setTitle("TEST TITLE");
         entity.setOrder(0L);
         entity.setCompleted(false);
+
         Optional<TodoModel> optional = Optional.of(entity);
 
         given(this.todoRepository.findById(anyLong())).willReturn(optional);
